@@ -20,6 +20,10 @@ app.use(express.json());
 
 const Model = require("./model");
 
+app.get("/", (req, res) => {
+    res.send("Running...")
+})
+
 app.post("/register", async (req, res) => {
     try {
         const result = await Model.findOneAndUpdate(
